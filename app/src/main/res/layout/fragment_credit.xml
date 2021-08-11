@@ -2,17 +2,27 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/inventoryOrderBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="456dp"
+        android:layout_marginEnd="76dp"
+        android:backgroundTint="#F5665C"
+        android:text="CREDIT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/itemNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="49dp"
         android:text="Item: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,61 +31,74 @@
         android:id="@+id/upcText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="19dp"
         android:text="UPC: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemNameText" />
 
     <TextView
-        android:id="@+id/packsizeText"
+        android:id="@+id/packSizeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
         android:text="Pk Size: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/upcText" />
 
     <Button
-        android:id="@+id/creditButton"
+        android:id="@+id/orderCancelBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="64dp"
-        android:text="CREDIT"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <Button
-        android:id="@+id/cancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="120dp"
-        android:text="CANCEL"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="151dp"
+        android:text="@android:string/cancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/casesText" />
+        app:layout_constraintTop_toBottomOf="@+id/searchTextLabel" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="103dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="277dp"
+        android:id="@+id/casesNumText"
+        android:layout_width="162dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="264dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/casesText"
+        app:layout_constraintStart_toEndOf="@+id/searchTextLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/casesText"
-        android:layout_width="79dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="98dp"
-        android:text="CASES: "
+        android:id="@+id/searchTextLabel"
+        android:layout_width="91dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="124dp"
+        android:text="CASES:"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/packsizeText" />
+        app:layout_constraintTop_toBottomOf="@+id/packSizeText" />
+
+    <TextView
+        android:id="@+id/searchText"
+        android:layout_width="106dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="81dp"
+        android:text="SEARCH: "
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/packSizeText" />
+
+    <EditText
+        android:id="@+id/searchTextBox"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="214dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/searchText"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

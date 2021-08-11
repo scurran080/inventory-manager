@@ -7,15 +7,14 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/addButton"
+        android:id="@+id/inventoryOrderBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="107dp"
         android:layout_marginTop="456dp"
-        android:layout_marginEnd="64dp"
-        android:text="ADD"
+        android:layout_marginEnd="45dp"
+        android:backgroundTint="#3F51B5"
+        android:text="ORDER"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cancelButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -49,31 +48,31 @@
         app:layout_constraintTop_toBottomOf="@+id/upcText" />
 
     <Button
-        android:id="@+id/cancelButton"
+        android:id="@+id/orderCancelBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="45dp"
         android:layout_marginTop="151dp"
         android:text="@android:string/cancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/casesText" />
+        app:layout_constraintTop_toBottomOf="@+id/searchTextLabel" />
 
     <EditText
         android:id="@+id/casesNumText"
-        android:layout_width="160dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="162dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="38dp"
         android:layout_marginTop="264dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/casesText"
+        app:layout_constraintStart_toEndOf="@+id/searchTextLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/casesText"
+        android:id="@+id/searchTextLabel"
         android:layout_width="91dp"
         android:layout_height="39dp"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="58dp"
         android:layout_marginTop="124dp"
         android:text="CASES:"
         android:textSize="24sp"
@@ -92,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/packSizeText" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/searchTextBox"
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginStart="23dp"
@@ -100,6 +99,28 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/searchText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="26dp"
+        android:backgroundTint="#4CAF50"
+        android:text="@android:string/search_go"
+        app:layout_constraintEnd_toStartOf="@+id/inventoryOrderBtn"
+        app:layout_constraintStart_toEndOf="@+id/orderCancelBtn"
+        app:layout_constraintTop_toBottomOf="@+id/casesNumText" />
+
+    <TextView
+        android:id="@+id/upcTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="87dp"
+        app:layout_constraintStart_toEndOf="@+id/upcText"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

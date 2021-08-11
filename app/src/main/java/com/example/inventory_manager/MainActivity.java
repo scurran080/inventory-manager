@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_credits:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CreditFragment()).commit();
                 break;
+
+            case R.id.nav_inventory:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InventorySelectFragment()).commit();
         }
         drawer.closeDrawer(GravityCompat.START);
         return false;
