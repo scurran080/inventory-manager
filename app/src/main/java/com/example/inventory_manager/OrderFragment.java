@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,9 @@ public class OrderFragment extends Fragment {
     private TextView upcTextView;
     private Button cancelButton;
     private Button orderButton;
+    private TextView packagesizeText;
+    private TextView itemName;
+    private EditText searchTextBox;
 
     @Nullable
     @Override
@@ -30,6 +34,10 @@ public class OrderFragment extends Fragment {
         upcTextView = (TextView) inflatedView.findViewById(R.id.upcTextView);
         cancelButton = (Button) inflatedView.findViewById(R.id.orderCancelBtn);
         orderButton = (Button) inflatedView.findViewById(R.id.inventoryOrderBtn);
+        packagesizeText = (TextView) inflatedView.findViewById(R.id.packSizeText);
+        itemName = (TextView) inflatedView.findViewById(R.id.itemNameText);
+        searchTextBox = (EditText) inflatedView.findViewById(R.id.searchTextBox);
+
 
         //Clear all filled out fields for another search
         cancelButton.setOnClickListener(new View.OnClickListener() {
@@ -42,8 +50,14 @@ public class OrderFragment extends Fragment {
         //TODO: Link with a bankend database for products. Match products using UPC and return relevant data.
         searchButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                if(upcSearchText.getText() != null || upcSearchText.getText() != ""){
-                    upcTextView.setText(upcSearchText.getText());
+                if(searchTextBox.getText() != null || searchTextBox.getText().toString() != ""){
+                    if(searchTextBox.getText().toString() != ""){
+                        APIRequest.apiGet(getActivity(),searchTextBox.getText().toString());
+                        //String[] res = APIRequest.apiGet(upcSearchText.toString());
+                        //System.out.println(res);
+
+
+                    }
                 }
             }
         });
