@@ -7,18 +7,32 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/inventoryOrderBtn"
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="26dp"
+        android:backgroundTint="#4CAF50"
+        android:text="@android:string/search_go"
+        app:layout_constraintEnd_toStartOf="@+id/creditButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/cancelButton"
+        app:layout_constraintTop_toBottomOf="@+id/casesNumText" />
+
+    <Button
+        android:id="@+id/creditButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="456dp"
-        android:layout_marginEnd="76dp"
+        android:layout_marginEnd="45dp"
         android:backgroundTint="#F5665C"
         android:text="CREDIT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/itemNameText"
+        android:id="@+id/itemNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
@@ -28,48 +42,48 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/upcText"
+        android:id="@+id/upcTextLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginTop="19dp"
         android:text="UPC: "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/itemNameLabel" />
 
     <TextView
-        android:id="@+id/packSizeText"
+        android:id="@+id/packSizeTextLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="16dp"
         android:text="Pk Size: "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upcText" />
+        app:layout_constraintTop_toBottomOf="@+id/upcTextLabel" />
 
     <Button
-        android:id="@+id/orderCancelBtn"
+        android:id="@+id/cancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="151dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="150dp"
         android:text="@android:string/cancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchTextLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/casesTextLabel" />
 
     <EditText
         android:id="@+id/casesNumText"
-        android:layout_width="162dp"
+        android:layout_width="167dp"
         android:layout_height="42dp"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="264dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/searchTextLabel"
+        app:layout_constraintStart_toEndOf="@+id/casesTextLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/searchTextLabel"
+        android:id="@+id/casesTextLabel"
         android:layout_width="91dp"
         android:layout_height="39dp"
         android:layout_marginStart="58dp"
@@ -77,28 +91,55 @@
         android:text="CASES:"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/packSizeText" />
-
-    <TextView
-        android:id="@+id/searchText"
-        android:layout_width="106dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="81dp"
-        android:text="SEARCH: "
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/packSizeText" />
+        app:layout_constraintTop_toBottomOf="@+id/packSizeTextLabel" />
 
     <EditText
         android:id="@+id/searchTextBox"
         android:layout_width="167dp"
         android:layout_height="42dp"
-        android:layout_marginStart="23dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="214dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/searchText"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toEndOf="@+id/itemNameLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/packageSizeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="123dp"
+        app:layout_constraintStart_toEndOf="@+id/packSizeTextLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/upcTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="88dp"
+        app:layout_constraintStart_toEndOf="@+id/upcTextLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="80dp"
+        android:text="SEARCH:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/packSizeTextLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
