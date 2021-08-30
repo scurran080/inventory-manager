@@ -13,11 +13,13 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+
 public abstract class APIRequest {
 
+    private static String baseURL = "*****************"; //TODO: re-add in ip address after push
+
     public static void get(Context context, String key, final VolleyResponseListener callback) {
-        String url = ""; //TODO: re-add in ip address after push
-        url += key;
+        String url = baseURL + "/" + key;
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
@@ -41,6 +43,23 @@ public abstract class APIRequest {
             }
         }
         );
+        requestQueue.add(jsonObjectRequest);
+    }
+
+    public static void post(Context context, JSONObject data) {
+        final JSONObject jsonObject = data;
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, baseURL, data, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                System.out.println(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
         requestQueue.add(jsonObjectRequest);
     }
 }

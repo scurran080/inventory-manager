@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.nav_order:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new OrderFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new OrderMenuFragment()).commit();
                 break;
 
             case R.id.nav_credits:
@@ -62,6 +62,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_inventory:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InventorySelectFragment()).commit();
+                break;
+            case R.id.nav_manage:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ManageOptionsFragment()).commit();
+                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return false;

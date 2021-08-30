@@ -1,6 +1,7 @@
 package com.example.inventory_manager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,6 @@ public class InventorySelectFragment extends Fragment {
     private Spinner inventorySpinner;
 
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,26 +39,31 @@ public class InventorySelectFragment extends Fragment {
         inventorySpinner.setAdapter(adapter);
 
 
-
         updateInvBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String selectedLocation = inventorySpinner.getSelectedItem().toString();
-
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new OrderFragment()).commit();
             }
         });
 
         viewInvBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String selectedLocation = inventorySpinner.getSelectedItem().toString();
+                Log.e("selected inv : ", selectedLocation);
+                Bundle bundle = new Bundle();
+                bundle.putString("inventoryName", selectedLocation);
+                ViewInventoryFragment viewInventory = new ViewInventoryFragment();
+                viewInventory.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, viewInventory).commit();
             }
         });
 
         clearInvBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String selectedLocation = inventorySpinner.getSelectedItem().toString();
             }
         });
 
